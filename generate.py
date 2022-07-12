@@ -266,15 +266,11 @@ class CrosswordCreator():
             if self.consistent(assignment):
                 # Find result
                 result = self.backtrack(assignment)
-                # If no result found
-                if result is None:
-                    # Remove value from assignment
-                    del assignment[var]
-                else:
+                # If result found, return it
+                if result:
                     return result
-            else:
-                # Remove value from assignment
-                del assignment[var]
+            # Remove value from assignment
+            del assignment[var]
         return None
 
 
